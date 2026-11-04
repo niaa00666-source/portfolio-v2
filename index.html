@@ -76,8 +76,10 @@ html.light .nav__light__mode:hover,html.light .nav__top__top__gallery__mode:hove
 .nav__cards .nav__card__inner{background:var(--color-black)}
 .nav__cards .nav__card__inner:hover{background:var(--surface)}
 .nav__cards .nav__card__inner::after,.nav__cards .nav__card__bg{display:none}
-.nav__cards>.nav__card:has(+.nav__card)>.nav__card__inner::before{content:'';position:absolute;inset:auto 16px 0 93px;height:1px;background:rgba(255,255,255,.12);pointer-events:none}
-html.light .nav__cards>.nav__card:has(+.nav__card)>.nav__card__inner::before{background:rgba(0,0,0,.08)}
+.nav__cards>.nav__card:has(+.nav__card)>.nav__card__inner::before{content:'';position:absolute;inset:auto 16px 0 93px;height:1px;background:rgba(255,255,255,.07);opacity:1;transition:opacity .2s,background-color .5s;pointer-events:none}
+html.light .nav__cards>.nav__card:has(+.nav__card)>.nav__card__inner::before{background:rgba(0,0,0,.04)}
+.nav__cards>.nav__card:has(>.nav__card__inner:is(:hover,[aria-current="page"]))>.nav__card__inner::before,
+.nav__cards>.nav__card:has(+.nav__card>.nav__card__inner:is(:hover,[aria-current="page"]))>.nav__card__inner::before{opacity:0}
 .nav__cards .nav__card__inner[aria-current="page"]{background:hsl(var(--nav-tint-hue,220) 24% 20%)}
 html.light .nav__cards .nav__card__inner[aria-current="page"]{background:hsl(var(--nav-tint-hue,220) 40% 90%)}
 .nav__card__bg{position:absolute;inset:0;pointer-events:none;background:radial-gradient(76.17% 129.78% at 23.83% 65.4%,#4e4e4e 0%,#242424 100%);transition:background .5s}
