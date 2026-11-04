@@ -6,8 +6,8 @@
     <base href="/portfolio-v2/">
     <meta name="app-base" content="/portfolio-v2">
     <meta name="theme-color" content="#000000">
-    <meta name="description" content="Алексей Агаев — локальный прототип портфолио. Проекты и изображения пока заменены заглушками.">
-    <title>Проект 01 · Alexey Agaev</title>
+    <meta name="description" content="Алексей Агаев — арт-директор в МТС Линк. Дизайн-системы Collapse и Orion, карьерный портал Газпром-Медиа, рекламная платформа и Rutube International.">
+    <title>Алексей Агаев · Арт-директор</title>
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2040%2040%22%3E%3Crect%20width%3D%2240%22%20height%3D%2240%22%20rx%3D%2210%22%2F%3E%3Cpath%20d%3D%22m20%207%2013%2026H7Z%22%20fill%3D%22%23e2e6e3%22%2F%3E%3Cpath%20d%3D%22m20%2016%205%2011H15Z%22%2F%3E%3C%2Fsvg%3E%0A">
     <style>
 /* Layout reference: https://www.portorocha.com/tinder — inspected 2026-11-04.
@@ -331,100 +331,250 @@ html.light .page__cursor{background:#ebebeb}
   .art--hero .art__symbol{display:none}
 }
 
+/* Curated case media, company marks and case-specific explanatory diagrams. */
+.company-logo{display:flex;align-items:center;justify-content:center}
+.company-logo img{display:block;width:100%;height:100%;object-fit:contain}
+.company-logo--mts{background:#ff0032}
+.company-logo--mts img{width:74%;height:74%}
+.company-logo--gpm,.company-logo--rutube{background:transparent}
+.nav__card__info p{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.case-heading{display:flex;justify-content:space-between;align-items:center;gap:24px;margin-bottom:8px}
+.case-heading>div{min-width:0}
+.case-heading p{color:var(--color-gray50);font-size:12px;margin-bottom:6px}
+.case-heading h1{font-family:sf-pro-display,sans-serif;font-size:26px;line-height:1.05}
+.case-status{font-size:12px;line-height:1.3;color:var(--color-gray50);text-align:right;max-width:45%}
+.case-image{display:block;width:100%;height:100%;object-fit:contain;pointer-events:none}
+.case-caption{font-size:12px;line-height:1.4;color:var(--color-gray50);padding:8px 4px 12px;overflow-wrap:anywhere}
+.case__study__media__texts2.featured .case__study__media__text__text2{min-height:0}
+.case__study__media__texts2.align-to-right>section{grid-column:2/-1}
+.case-copy-featured h2{margin-bottom:16px}
+.case-next{margin-top:8px;padding:24px}
+.case-next p{font-size:23px;margin-top:8px}
+.gallery-footer{display:flex;flex-direction:column;justify-content:center;align-items:center;padding:0 12px;min-width:0}
+.gallery-caption{font-size:11px;line-height:14px;color:var(--color-gray50);max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.gallery-slide>.case-image,.gallery-slide>.case-diagram{width:100%;height:100%}
+.home-update-image{aspect-ratio:1.4;overflow:hidden;border-radius:var(--radius-small)}
+.home-update-image .case-image{object-fit:cover}
+.home-update-description{margin-top:8px}
+.home-update h2{font-size:18px}
+.about-portrait{display:block;width:100%;height:100%;object-fit:contain;background:#242424}
+.about__contact a svg{width:14px;height:14px;vertical-align:middle}
+.case-diagram{height:100%;width:100%;padding:clamp(16px,3vw,40px);background:#eeede8;color:#24222b;display:flex;flex-direction:column;overflow:hidden;font-family:sf-pro-display,sans-serif}
+.diagram-heading{flex-shrink:0;font-size:clamp(9px,1vw,12px);line-height:1.2}
+.diagram-heading>span{font-size:inherit;letter-spacing:.08em;color:#77727f}
+.diagram-heading h2{font-size:clamp(18px,2.5vw,34px);line-height:1.08;margin-top:10px;letter-spacing:-.02em}
+.diagram-body{display:flex;flex-direction:column;justify-content:center;gap:12px;flex:1;min-height:0}
+.diagram-packages{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.diagram-packages>div{background:#fff;border-radius:var(--radius-card);padding:clamp(8px,1.5vw,20px);min-width:0}
+.diagram-packages strong{display:block;font-size:clamp(12px,1.9vw,24px)}
+.diagram-packages span{display:block;font-size:clamp(9px,1vw,13px);line-height:1.2;color:#77727f;margin-top:8px}
+.diagram-arrow{text-align:center;font-size:clamp(18px,2vw,28px);line-height:1;color:#81708d}
+.diagram-foundation{display:flex;justify-content:center;align-items:center;gap:20px;font-size:clamp(12px,1.9vw,24px)}
+.diagram-foundation i{font-style:normal;color:#9b8baa}
+.diagram-modules{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:8px}
+.diagram-modules>div{background:#dfd7f0;border-radius:var(--radius-card);padding:clamp(10px,1.5vw,20px);font-size:clamp(11px,1.6vw,21px)}
+.diagram-modules small{font-size:clamp(9px,1vw,13px);color:#746783}
+.diagram-semantic{display:flex;justify-content:center;gap:10px;font-size:clamp(10px,1.2vw,16px)}
+.diagram-semantic span{padding:9px 14px;background:#e1ddea;border-radius:30px}
+.diagram-themes{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.diagram-theme{border-radius:var(--radius-card);padding:clamp(12px,2vw,26px);background:white;min-width:0}
+.diagram-theme>span{font-size:clamp(10px,1.2vw,16px);opacity:.6}
+.diagram-theme>strong{display:block;font-size:clamp(14px,2vw,26px);line-height:1.15;margin:18px 0}
+.diagram-theme>div{display:flex;gap:6px}
+.diagram-theme i{width:clamp(12px,2vw,26px);aspect-ratio:1;border-radius:50%;background:#7355ec}
+.diagram-theme i:nth-child(2){background:#ded6f7}.diagram-theme i:nth-child(3){background:#2a2335}
+.diagram-theme.theme-1{background:#212127;color:#f2f1f8}
+.diagram-theme.theme-2{background:#e4dbf5;color:#4b2c70}
+.diagram-note{font-size:clamp(10px,1.1vw,14px);line-height:1.2;text-align:center;color:#77727f}
+.diagram-workflow{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.diagram-workflow>div{padding:clamp(10px,1.5vw,20px);background:#fff;border-radius:var(--radius-card);min-width:0}
+.diagram-workflow>div>span{font-size:clamp(10px,1.3vw,16px);color:#9276b2}
+.diagram-workflow strong{display:block;font-size:clamp(14px,1.8vw,24px);margin:18px 0 8px}
+.diagram-workflow small{font-size:clamp(9px,1vw,13px);line-height:1.3;color:#77727f}
+.diagram-feedback{padding:16px;background:#e1d8ee;border-radius:var(--radius-card);font-size:clamp(11px,1.5vw,20px);text-align:center}
+.diagram-feedback>span{margin-right:12px}
+@media(max-width:912px){.case__study__media__texts2.align-to-right>section{grid-column:1/-1}}
+@media(max-width:656px){
+ .case-heading{gap:12px}.case-heading h1{font-size:23px}.case-status{font-size:10px;max-width:42%}
+ .case-caption{font-size:11px}.case-next{padding:16px}
+ .diagram-heading h2{margin-top:6px}.diagram-body{gap:6px}
+ .diagram-packages{grid-template-columns:repeat(2,1fr);gap:6px}
+ .diagram-packages span{margin-top:3px}.diagram-arrow{font-size:16px}
+ .diagram-foundation{gap:12px}.diagram-modules{gap:6px;margin-top:0}
+ .diagram-modules>div{padding:8px}.diagram-modules small{font-size:8px}
+ .diagram-semantic{gap:6px}.diagram-semantic span{padding:5px 8px}
+ .diagram-themes{gap:6px}.diagram-theme{padding:10px}.diagram-theme>strong{margin:10px 0}
+ .diagram-workflow{grid-template-columns:1fr 1fr;gap:6px}.diagram-workflow>div{padding:6px;font-size:9px;line-height:1.15}
+ .diagram-workflow strong{margin:4px 0;font-size:13px}.diagram-workflow small{font-size:9px}
+ .diagram-feedback{padding:6px}.gallery-caption{font-size:10px}
+}
+
 </style>
     <script>
       try { document.documentElement.className = localStorage.getItem('portfolio-theme') === 'light' ? 'light' : 'dark'; } catch {}
     </script>
     <script type="module">
-// Replace this content with approved portfolio materials. Everything below is demo content.
+// Curated public narratives. Evidence and original research stay outside public/.
 const profile = {
-  name: 'Алексей Агаев',
-  wordmark: 'ALEXEY AGAEV',
-  city: 'Москва',
-  timeZone: 'Europe/Moscow',
-  about: 'Арт-дирекшен, продуктовый дизайн и дизайн-системы. Здесь появится рассказ обо мне.',
+  name: 'Алексей Агаев', wordmark: 'ALEXEY AGAEV', city: 'Москва', timeZone: 'Europe/Moscow',
+  about: 'Арт-директор в МТС Линк. Создаю дизайн-системы, продукты и процессы работы с ИИ.',
+  email: 'niaa00666@gmail.com', linkedin: 'https://www.linkedin.com/in/alexey-agaev-959104362/', portrait: './portrait.webp',
 };
+const image = (name, ratio, alt, caption) => ({ kind: 'image', src: `./case-${name}.webp`, ratio, alt, caption });
+const diagram = (name, title, caption) => ({ kind: 'diagram', name, title, ratio: 1, alt: title, caption });
+const section = (title, ...paragraphs) => ({ title, paragraphs });
 
-const palettes = [
-  ['#bd2b1e', '#eee4ef', '#600e23', '#eea5bb'],
-  ['#11191c', '#e2e8e9', '#aab5ba', '#7e8f99'],
-  ['#e94aa2', '#cde5ca', '#5d1c48', '#ff923e'],
-  ['#151c21', '#c0ef4a', '#7c992c', '#f0f1e9'],
-  ['#153f8f', '#f3ecdf', '#e1b1b7', '#7eafe8'],
-  ['#080808', '#f1f1e7', '#6c6d69', '#c4bfac'],
-  ['#c1c7bd', '#ed752a', '#373231', '#eee9e3'],
-  ['#4867c8', '#fff1e9', '#201b3a', '#eda6d3'],
-  ['#db443d', '#e4d3b1', '#402114', '#fdcc69'],
-  ['#222326', '#c4c5fa', '#6950cf', '#e8d1ef'],
-  ['#7f9b80', '#f3e9ce', '#1b3d3a', '#c3cbbb'],
-  ['#5d2890', '#e6f52e', '#caa6ec', '#30174f'],
+const projects = [
+  {
+    id: 'project-01', slug: 'collapse', number: '01', title: 'Collapse', company: 'МТС Линк',
+    description: 'Дизайн-система экосистемы и работа дизайнеров через Claude',
+    category: 'Дизайн-системы', logo: './logo-mts-link.png', logoClass: 'mts',
+    context: 'МТС Линк · 2025 — настоящее время', role: 'Арт-директор · архитектура и дизайн системы',
+    status: 'Система создана, развитие продолжается',
+    team: 'Продуктовые дизайнеры, разработчики дизайн-системы и команды продуктов.',
+    ownership: 'Инициировал создание системы с нуля, спроектировал архитектуру, токены и компоненты. Сейчас развиваю систему и процесс работы дизайнеров через Claude.',
+    result: 'Вместо UI-кита одного продукта появилась общая основа для экосистемы: компоненты, темы, правила композиции и White Label. Следующий этап — корректная сборка экранов через ИИ на разных платформах.',
+    intro: [
+      section('С нуля для экосистемы', 'Я построил Collapse — дизайн-систему для продуктов МТС Линк. Затем, после отказа от Figma, заново выстроил систему для работы через Claude.', 'Моя задача — связать визуальный язык, архитектуру компонентов и работу команд так, чтобы система помогала собирать правильные интерфейсы.'),
+      section('Мой вклад', 'Аудит и обоснование новой системы, пакетная архитектура, семантические токены, компоненты и темы, White Label, гайды и взаимодействие с продуктовыми командами.', 'Сейчас развиваю правила и процесс, по которым дизайнеры работают с системой в коде и проверяют результат генерации.'),
+    ],
+    sections: [
+      section('Почему понадобилась новая система', 'Исходная задача звучала как масштабирование UI-кита мессенджера на другие модули. Аудит показал, что не хватает токенизации, гибкости компонентов, архитектуры тем и понятных правил для разных команд.', 'Я предложил руководству создать новую систему. Это позволило проектировать общую основу под консолидацию продуктов и White Label, а не переносить ограничения одного UI-кита в остальные интерфейсы.'),
+      section('Общая основа, продуктовая специфика', 'Разделил систему на пакеты Core, Tokens, Icons и Components. Для композиции компонентов использовал иерархию Core → Base → Modules.', 'Продуктовая команда может собирать свои модули на общей основе и сохранять специфические сценарии. Глобальное изменение не должно требовать ручной пересборки каждого локального решения.'),
+      section('Темы — часть архитектуры', 'Заложил многоуровневую темизацию: светлая, тёмная и пользовательские темы. Семантический слой отделяет назначение цвета и материала от конкретного значения.', 'White Label требует менять бренд и тему без разрушения логики компонентов. Поэтому токены, состояния, адаптивность и варианты компонентов проектировал как связанные части системы.'),
+      section('После Figma — работа через Claude', 'Когда компания отказалась от Figma, я заново построил систему под новый процесс. Теперь важно не только наличие компонентов: ИИ должен понимать, когда их выбирать, как сочетать и какие решения недопустимы.', 'Развиваю правила сборки экранов, продуктовые паттерны и обратную связь от дизайнеров. Повторяющаяся ошибка становится поводом улучшить компонент, правило или пример. Эта работа продолжается на разных платформах.'),
+      section('Что получилось', 'Создана большая дизайн-система для экосистемы МТС Линк и основа для работы дизайнеров через Claude. Мой вклад — дизайн-архитектура, компоненты, правила и качество интерфейса; инженерная реализация и внедрение — совместная работа с разработкой и продуктовыми командами.', 'Дальнейший фокус — покрытие продуктовых сценариев и качество сборки экранов. Ценность системы определяется тем, насколько правильно и предсказуемо она работает в реальных задачах дизайнеров.'),
+    ],
+    media: [
+      image('collapse-cover', 1920 / 1272, 'Визуальное направление Collapse: интерфейсные карточки и графические материалы', 'Визуальное направление Collapse из материалов проекта.'),
+      diagram('architecture', 'Общая архитектура Collapse', 'Схема архитектурного подхода: пакеты системы и продуктовые модули.'),
+      diagram('themes', 'Одна система — разные темы', 'Принцип семантических токенов и темизации. Схема подготовлена для этого кейса.'),
+      diagram('workflow', 'Дизайнер, система и Claude', 'Модель работы, которую я развиваю: сборка по правилам системы и проверка дизайнером.'),
+    ],
+    layout: [{ media: 0 }, { intro: true }, { text: 0 }, { media: 1 }, { text: 1 }, { media: 2 }, { text: 2 }, { media: 3 }, { text: 3 }, { text: 4 }],
+  },
+  {
+    id: 'project-02', slug: 'career', number: '02', title: 'Карьерный портал', company: 'Газпром-Медиа',
+    description: 'Собственный канал найма: сайт для кандидатов и интерфейс HR',
+    category: 'Продуктовый дизайн', logo: './logo-gazprom-media.png', logoClass: 'gpm',
+    context: 'В период работы в Газпром-Медиа · 2024—2025', role: 'Ведущий продуктовый дизайнер · полный цикл дизайна',
+    status: 'Запущенный продукт', team: 'Продакт-менеджер, системный аналитик, frontend, backend и QA. Дизайн вёл самостоятельно.',
+    ownership: 'Исследования, продуктовая и дизайн-стратегия, UX/UI публичного сайта и HR-админки, проверка прототипов, согласование скоупа и дизайн-ревью реализации.',
+    result: 'Запустили собственный карьерный портал и HR-интерфейс. Сайт стал дополнительным каналом привлечения кандидатов; работа с вакансиями получила единый интерфейс и понятные статусы.',
+    intro: [
+      section('Больше, чем каталог вакансий', 'Помог Газпром-Медиа создать собственный опыт найма: от знакомства кандидата с компанией до управления вакансией в HR-интерфейсе.', 'Вёл дизайн от исследований и определения MVP до проверки реализации на dev-стенде и передачи в QA.'),
+      section('Результат', 'Запустили публичный карьерный сайт и связанную админ-панель HR. Портал добавил компании собственный канал привлечения кандидатов наряду с внешними площадками.', 'В проекте соединились продуктовый дизайн, айдентика, корпоративная дизайн-система и работа с командой разработки.'),
+    ],
+    sections: [
+      section('У кандидата и HR разные задачи', 'Исходный запрос был простым: нужен сайт вакансий. На установочных встречах я помог развернуть его в задачу собственного канала найма и привлекательного HR-бренда. До выпуска оставалось около полугода.', 'Исследовал паттерны карьерных площадок, поговорил с опытными и начинающими кандидатами и с HR. Кандидатов раздражало повторное заполнение анкет; им были важны команда, офис и живой характер компании. HR мешали разрозненные инструменты и длительные согласования.'),
+      section('Прототип изменился после проверки', 'Начал с HR-админки на собственной корпоративной дизайн-системе. Так можно было быстрее проверять сценарии, статусы и ролевую логику.', 'Первые прототипы показал трём HR-менеджерам в коридорных и модерируемых тестах. Боковая панель настроек не выдержала реального объёма информации — я переработал её структуру в финальных макетах.'),
+      section('Редактор: договориться о главном', 'Стейкхолдеры хотели полнофункциональный редактор вакансий уже в MVP. Вместе с тимлидом разработки разобрали стоимость: полный вариант не помещался в сроки и ресурсы.', 'Я предложил ограничить MVP основными возможностями. Разработка использовала сторонний код и адаптировала интерфейс под нашу систему. Так сохранили нужный бизнесу сценарий и целостность UI.'),
+      section('Яркий бренд, ясная структура', 'Для публичного сайта разработал самостоятельный визуальный характер внутри палитры холдинга: гротеск, мягкие формы, градиенты и метафору сотрудников-звёзд.', 'Первый вариант слишком буквально раскрывал метафору созвездия. Его было сложно систематизировать, а в коридорных тестах обилие визуала мешало ориентироваться. Я перешёл к модульной структуре с ясным путём к вакансиям. Для стажировок отдельно выстроил объяснение преимуществ, поиск позиций и этапы отбора.'),
+      section('От макета до работающего продукта', 'С командой разбирали каждый пользовательский сценарий, формулировали системные требования и критерии приёмки в Jira. На dev-стенде я сверял реализацию с макетами, описывал правки и возвращал задачи на доработку.', 'После исправлений передавали задачу в QA. Результат — запущенный портал, собственный канал коммуникации с кандидатами и рабочий интерфейс HR для вакансий и согласований.'),
+    ],
+    media: [
+      image('career-cover', 1920 / 1440, 'Первый экран карьерного портала Газпром-Медиа и начало списка вакансий', 'Публичный сайт. Деталь главной страницы из финального макета.'),
+      image('career-prototype', 1920 / 1080, 'Прототип HR-админки с настройками вакансии в боковой панели', 'Первая структура HR-интерфейса: настройки вакансии и боковая панель.'),
+      image('career-admin', 1920 / 1080, 'HR-интерфейс: список вакансий, фильтры, статусы и подтверждение отправки', 'Работа с вакансиями: статусы, фильтры и подтверждение действия. В макете — демонстрационное наполнение.'),
+      image('career-editor', 1920 / 714, 'Редактирование вакансии в HR-интерфейсе', 'Редактор вакансии в согласованном объёме MVP.'),
+      image('career-identity', 1598 / 1282, 'Визуальные материалы и айдентика карьерного портала', 'Визуальный контекст и айдентика внутри бренда холдинга.'),
+      image('career-internships', 1920 / 1440, 'Начало страницы стажировок Газпром-Медиа', 'Страница стажировок: знакомство с программой и переход к возможностям.'),
+    ],
+    layout: [{ media: 0 }, { intro: true }, { text: 0 }, { media: 1 }, { text: 1 }, { media: 2 }, { media: 3 }, { text: 2 }, { media: 4 }, { text: 3 }, { media: 5 }, { text: 4 }],
+  },
+  {
+    id: 'project-03', slug: 'orion', number: '03', title: 'Orion', company: 'Газпром-Медиа',
+    description: 'Корпоративная дизайн-система для внутренних сервисов',
+    category: 'Дизайн-системы', logo: './logo-gazprom-media.png', logoClass: 'gpm',
+    context: 'В период работы в Газпром-Медиа · 2024—2025', role: 'Ведущий продуктовый дизайнер · инициатор дизайн-системы',
+    status: 'Библиотека и реализация в Storybook', team: 'Дизайн-директор, дизайнеры продуктов и frontend-разработчики.',
+    ownership: 'Инициировал аудит, обосновал необходимость системы, спроектировал архитектуру, токены, компоненты, типографику и документацию.',
+    result: 'Создана корпоративная дизайн-система и её реализация в Storybook. На её основе спроектирована HR-админка карьерного портала Газпром-Медиа.',
+    intro: [
+      section('Общая основа для сервисов', 'Внутренние продукты холдинга развивались с разными UI-подходами. Дизайнеры и разработчики повторяли похожую работу, а единые изменения требовали ручного согласования.', 'Я инициировал аудит и предложил дизайн-директору создать корпоративную систему — Orion.'),
+      section('Что сделал', 'Пакетный подход, токены, библиотека компонентов, правила композиции, типографика, темы и документация. Вместе с разработкой связали дизайн-систему с реализацией в Storybook.', 'Применил её при проектировании HR-админки карьерного портала: общий фундамент получил конкретный продуктовый контекст.'),
+    ],
+    sections: [
+      section('Начал с проблем команд', 'Официальной задачи на унификацию изначально не было. Я провёл внутреннее исследование и собрал трудности дизайнеров и frontend-разработчиков.', 'Дизайнерам приходилось заново собирать токены и объяснять поведение компонентов. Разработке мешали разрозненные библиотеки, UI-расхождения и ручные глобальные правки. Так появилась основа для предложения о единой системе.'),
+      section('Гибкость через композицию', 'Спроектировал компоненты от простых частей до составных решений и шаблонов. Варианты, состояния, размеры и числовые параметры связал с токенами.', 'Для нестандартного содержимого предусмотрел слоты. Продукт должен расширять готовый компонент, а не разрушать его структуру. Пакетный подход и версии позволяют команде выбирать нужную часть системы.'),
+      section('Типографика как система параметров', 'Разложил текстовые стили на гарнитуру, размер, интерлиньяж, насыщенность и трекинг. Значения связаны через переменные, чтобы изменение шрифта или базового размера не превращалось в ручную правку макетов.', 'Семантические токены описывают назначение слоя и элемента. Именование токенов связывает дизайн и CSS, а темы помогают адаптировать систему под разные продукты.'),
+      section('Один язык дизайна и разработки', 'Гайд компонента разделил на назначение и правила дизайна, требования разработки и поведение анимации. Важны не только свойства, но и ограничения, фокус, крайние случаи и пример в продуктовом контексте.', 'Для motion предусмотрел готовые переходы и настройку duration и easing через токены. Это часть системы компонентов, а не набор отдельных эффектов.'),
+      section('Из библиотеки — в продукт', 'Система получила реализацию в Storybook. Для карьерного портала использовал её как основу HR-админки: готовые компоненты помогали собирать и обсуждать реальные сценарии работы с вакансиями.', 'Ценность дизайн-системы раскрывается в конкретном продукте: через ясные правила, гибкую композицию и сотрудничество с разработкой.'),
+    ],
+    media: [
+      image('orion-cover', 1920 / 1406, 'Пример интерфейса, собранного из компонентов Orion', 'Компоненты Orion в продуктовом контексте. Демонстрационный экран.'),
+      image('orion-components', 1650 / 1626, 'Композиция форм, панелей и модальных компонентов Orion', 'Композиция компонентов и состояний.'),
+      image('orion-guidelines', 1682 / 1634, 'Гайд боковой панели Orion с назначением и примерами', 'Документация боковой панели: назначение и правила применения.'),
+      image('orion-type', 1920 / 1309, 'Типографическая система Orion на базе Inter', 'Типографика: иерархия и параметры текстовых стилей.'),
+      image('orion-motion', 1464 / 1462, 'Настройка кривых и времени анимации в Orion', 'Токенизация переходов: готовые пресеты и индивидуальные настройки.'),
+      image('orion-tokens', 1532 / 1452, 'Семантические токены Orion', 'Связь значений с назначением элементов.'),
+    ],
+    layout: [{ media: 0 }, { intro: true }, { text: 0 }, { media: 1 }, { text: 1 }, { media: 3 }, { media: 5 }, { text: 2 }, { media: 2 }, { media: 4 }, { text: 3 }, { text: 4 }],
+  },
+  {
+    id: 'project-04', slug: 'quanta', number: '04', title: 'Рекламная платформа', company: 'Газпром-Медиа',
+    description: 'Сквозной сценарий медийной сделки и дизайн-система Quanta',
+    category: 'Продуктовый дизайн', logo: './logo-gazprom-media.png', logoClass: 'gpm',
+    context: 'В период работы в Газпром-Медиа · 2024—2025', role: 'Ведущий продуктовый дизайнер · исследования и проектирование',
+    status: 'Проект остановился до реализации', team: 'Продакт-менеджер, бизнес-аналитики, разработка и участники процесса медийных сделок.',
+    ownership: 'Вёл дизайн-процесс: исследования, JTBD, информационная архитектура, скоуп MVP, прототипы интерфейсов и дизайн-система Quanta.',
+    result: 'Сформированы архитектура сквозного сценария сделки, скоуп MVP вокруг сейлз-менеджера и прототипы. Гипотеза встроенного чата не подтвердилась. До реализации продукт не дошёл.',
+    intro: [
+      section('Сделка между системами', 'РПС — проект платформы для медийных сделок в DIGITAL, TV и RADIO. Он должен был связать работу людей, CRM, медиапланирование, задачи и отчётность.', 'Я отвечал за дизайн-процесс от исследования до архитектуры, прототипов и системы Quanta.'),
+      section('Результат этапа', 'Определили ядро MVP вокруг сейлз-менеджера, описали пользовательский путь и границы интеграций, спроектировали интерфейсы.', 'Подготовили прототипы и компонентную основу Quanta. Проект остановился до реализации.'),
+    ],
+    sections: [
+      section('Потери — на стыках', 'Вместе с продактом изучали работу сейлзов, аккаунтов, медиапланеров, продюсеров и аналитиков. Основные потери времени и информации обнаружились при передаче ответственности между отделами.', 'Например, согласованный медиаплан из Excel должен был превратиться в задачу другой системы. Ни у одного участника не было целостного актуального представления о сделке; часть данных приходилось собирать вручную.'),
+      section('Сузить MVP, сохранить связность', 'Попытка понемногу покрыть функции всех десяти с лишним ролей привела бы к поверхностному продукту. Мы выбрали связный сценарий вокруг сейлз-менеджера.', 'Разложил задачи по JTBD, а процессы — по функциям РПС, CRM, трафик-системы и ERP. Так определили, что должно стать ядром платформы, а с чем достаточно выстроить интеграцию.'),
+      section('Увидеть весь путь сделки', 'Собрал высокоуровневую As-Is CJM. Она помогла показать переходы между ролями и системами, согласования и точки передачи информации.', 'На этой основе проектировал информационную архитектуру, сценарии и интерфейсы. Для общей визуальной и компонентной основы создал Quanta.'),
+      section('Гипотеза, от которой отказались', 'Мы предположили, что чат клиента с менеджером внутри сделки соберёт коммуникацию в одном месте. Проверили прототипы в контекстных интервью с тремя сейлз-менеджерами.', 'В предложенном виде гипотеза не подтвердилась: привязка к одной сделке мешала гибко работать с большими массивами данных. Добавлять чат только ради централизации оказалось недостаточно.'),
+      section('Чем закончился проект', 'Результат моей работы — исследование процесса, выбор границ MVP, архитектура сценариев, прототипы и дизайн-система. Проект был остановлен до разработки.', 'Главный вывод: в сложном B2B-продукте важно выбирать не максимальное число ролей и функций, а законченный сценарий с понятной ценностью для конкретного пользователя.'),
+    ],
+    media: [
+      image('quanta-cover', 1920 / 1084, 'Прототип аналитического раздела рекламной платформы', 'Прототип РПС с демонстрационными данными. Продукт не был реализован.'),
+      image('quanta-systems', 1920 / 685, 'Декомпозиция между РПС, CRM, трафик-системой и ERP', 'Какие функции берёт РПС и с чем интегрируется.'),
+      image('quanta-journey', 1920 / 797, 'Карта пути медийной сделки по ролям', 'As-Is CJM: путь сделки и передача ответственности.'),
+      image('quanta-scope', 1920 / 1008, 'Текущий и целевой процесс рекламной сделки', 'Сравнение процессов для определения ядра MVP.'),
+    ],
+    layout: [{ media: 0 }, { intro: true }, { text: 0 }, { media: 1 }, { text: 1 }, { media: 2 }, { text: 2 }, { media: 3 }, { text: 3 }, { text: 4 }],
+  },
+  {
+    id: 'project-05', slug: 'rutube', number: '05', title: 'Rutube International', company: 'Rutube · Газпром-Медиа',
+    description: 'Исследования, стратегия MVP и интерфейсы видеоплатформы',
+    category: 'Исследования', logo: './logo-rutube.svg', logoClass: 'rutube',
+    context: 'В период работы в Газпром-Медиа · 2024—2025', role: 'Ведущий продуктовый дизайнер · стратегия и UX/UI',
+    status: 'Проект остановился до реализации', team: 'Продуктовая команда; в исследовании — зрители, авторы контента и рекламодатели.',
+    ownership: 'Формировал продуктовое видение и MVP-стратегию, исследовал аудитории, проектировал сценарии, информационную архитектуру и интерфейсы.',
+    result: 'Сформированы MVP-стратегия, приоритизированный бэклог и UI-драфты веб- и мобильной версии. Проект остановился до реализации.',
+    intro: [
+      section('Видеопродукт для новой аудитории', 'Проект локализованной версии Rutube для международного рынка. Начинали с исследования: какую ценность дать зрителям, авторам и рекламодателям и что включить в первый продукт.', 'Мой контур — продуктовая стратегия, исследования, сценарии, архитектура и дизайн интерфейсов.'),
+      section('Результат этапа', 'MVP-стратегия, приоритизированный бэклог и UI-драфты веб- и мобильного интерфейсов.', 'Связал потребности трёх аудиторий с возможностями первого продукта. Проект остановился до реализации.'),
+    ],
+    sections: [
+      section('Три стороны платформы', 'Зрителю нужны подходящий контент и удобный просмотр. Автору — понятная работа с аудиторией и монетизацией. Рекламодателю — возможность привлекать людей через контент.', 'Исследовал привычные UI/UX-паттерны видеоплатформ, проводил качественные интервью и опросы. Отдельно разбирал отношение к рекламе, рекомендациям, поиску, подпискам и возможностям авторов.'),
+      section('От наблюдений к MVP', 'После качественного этапа переводил проблемы и предположения в вопросы для количественной проверки. Затем распределял гипотезы по степени подтверждения и приоритету.', 'Не пытался включить в первый релиз все найденные возможности. При выборе учитывал ценность для пользователя, сложность и необходимость работы на нескольких платформах.'),
+      section('Просмотр без лишних прерываний', 'Реклама и её влияние на просмотр стали одним из направлений исследования. Разбирал варианты, которые сохраняют монетизацию и меньше разрывают пользовательский сценарий.', 'JTBD помогали сформулировать задачу через ситуацию и желаемый результат. Дерево возможностей связывало продуктовые цели с гипотезами, которые можно проверять дальше.'),
+      section('Знакомые паттерны', 'В UI-драфтах проработал главную страницу, поиск и навигацию, категории контента и страницу просмотра. Для мобильного контекста учитывал доступность основных действий и привычные паттерны видеосервисов.', 'На этапе MVP цель была собрать понятный базовый опыт: помочь человеку найти видео, начать просмотр и продолжить взаимодействие с контентом.'),
+      section('Результат проектирования', 'Работа завершилась MVP-стратегией, приоритетами и макетами. Следующим этапом должны были стать проверки интерактивных прототипов и работа с разработкой, но до реализации проект не дошёл.', 'Главная ценность этого этапа — связать потребности трёх аудиторий, сузить первый продукт и сделать явными решения, которые ещё требовали проверки.'),
+    ],
+    media: [
+      image('rutube-cover', 1920 / 1211, 'Страница просмотра Rutube International на вебе и мобильном экране', 'UI-драфты страницы просмотра. Проект не был реализован.'),
+      image('rutube-feed', 1920 / 1087, 'UI-драфт главной страницы Rutube International', 'Главная страница: навигация, категории и обнаружение контента.'),
+      image('rutube-priorities', 1920 / 1078, 'Карточки гипотез для MVP Rutube International', 'Приоритизация гипотез и определение скоупа MVP.'),
+      image('rutube-jobs', 1376 / 532, 'JTBD и варианты решения задачи рекламы без прерывания просмотра', 'Задача пользователя и варианты решения в пределах MVP.'),
+      image('rutube-tree', 1920 / 1269, 'Дерево возможностей и гипотез видеоплатформы', 'Связь продуктовых целей и проверяемых гипотез.'),
+    ],
+    layout: [{ media: 0 }, { intro: true }, { text: 0 }, { media: 2 }, { text: 1 }, { media: 3 }, { media: 4 }, { text: 2 }, { media: 1 }, { text: 3 }, { text: 4 }],
+  },
 ];
-const kinds = ['Дизайн-системы', 'Продукты', 'Арт-дирекшен', 'Эксперименты'];
-const descriptions = [
-  'Здесь появится короткое описание проекта и его главной задачи',
-  'Продукт, визуальная система и интерфейсы — описание проекта',
-  'Место для названия задачи и короткого рассказа о решении',
-  'Исследование, проектирование и развитие цифрового опыта',
-];
-
-const projects = Array.from({ length: 5 }, (_, i) => ({
-  id: `project-${String(i + 1).padStart(2, '0')}`,
-  number: String(i + 1).padStart(2, '0'),
-  title: `Проект ${String(i + 1).padStart(2, '0')}`,
-  description: descriptions[i % descriptions.length],
-  category: kinds[i % kinds.length],
-  palette: palettes[i % palettes.length],
-  coverKind: ['poster', 'wordmark', 'orbit', 'tiles', 'monogram', 'interface'][i % 6],
-  coverRatio: [3 / 4, 3 / 2, 1, 3 / 4, 3 / 2, 1][i % 6],
-}));
-const categories = ['Все', ...kinds];
-
-// The reference case has 40 media blocks, with the same full-width, paired and triptych rhythm.
-const caseLayout = [
-  { media: 0, kind: 'hero' }, { text: 'intro' },
-  { media: 1, kind: 'poster' },
-  { media: 2, kind: 'monogram', layout: 'split', ratio: 3 / 4 },
-  { media: 3, kind: 'wordmark', layout: 'split', ratio: 3 / 4 },
-  { text: 'identity' }, { media: 4, kind: 'wordmark' }, { media: 5, kind: 'tiles' }, { media: 6, kind: 'orbit' },
-  { text: 'color' },
-  { media: 7, kind: 'swatches', layout: 'split', ratio: 3 / 4 },
-  { media: 8, kind: 'poster', layout: 'split', ratio: 3 / 4 },
-  { media: 9, kind: 'swatches' }, { media: 10, kind: 'orbit' },
-  { text: 'type' }, { media: 11, kind: 'type' },
-  { media: 12, kind: 'type', layout: 'split', ratio: 3 / 4 },
-  { media: 13, kind: 'poster', layout: 'split', ratio: 3 / 4 },
-  { media: 14, kind: 'type' },
-  { media: 15, kind: 'monogram', layout: 'split', ratio: 3 / 4 },
-  { media: 16, kind: 'type', layout: 'split', ratio: 3 / 4 },
-  { media: 17, kind: 'tiles' }, { text: 'motion' }, { media: 18, kind: 'orbit' },
-  { media: 19, kind: 'wordmark', layout: 'split-rows position-left' },
-  { media: 20, kind: 'tiles', layout: 'split-rows position-left' },
-  { media: 21, kind: 'poster', layout: 'split position-right', ratio: 3 / 4 },
-  { media: 22, kind: 'orbit' }, { media: 23, kind: 'interface' },
-  { media: 24, kind: 'poster', layout: 'split', ratio: 3 / 4 },
-  { media: 25, kind: 'monogram', layout: 'split', ratio: 3 / 4 },
-  { text: 'components' }, { media: 26, kind: 'tiles' }, { media: 27, kind: 'orbit' }, { media: 28, kind: 'interface' },
-  { media: 29, kind: 'interface', layout: 'split', ratio: 3 / 4 },
-  { media: 30, kind: 'poster', layout: 'split', ratio: 3 / 4 },
-  { media: 31, kind: 'tiles', ratio: 1.4992503748125936 }, { text: 'product' },
-  { media: 32, kind: 'interface', layout: 'split', ratio: 3 / 4 },
-  { media: 33, kind: 'monogram', layout: 'split', ratio: 3 / 4 },
-  { media: 34, kind: 'interface' },
-  { media: 35, kind: 'poster', layout: 'split', ratio: 3 / 4 },
-  { media: 36, kind: 'interface', layout: 'split', ratio: 3 / 4 },
-  { media: 37, kind: 'tiles' }, { media: 38, kind: 'wordmark' }, { media: 39, kind: 'hero' },
-];
-
-const copy = {
-  challenge: ['Задача проекта', 'Здесь появится описание исходной ситуации: что нужно было изменить, кому мешала проблема и почему она стала важна для продукта. Пока это текстовая заглушка, сохраняющая объём и ритм оригинальной страницы. Позже здесь будут контекст проекта, ограничения и моя роль.'],
-  solution: ['Решение', 'Короткая формулировка главной идеи.', 'Здесь появится описание выбранного подхода. Что связывает отдельные решения в общую систему, как она работает в продукте и какие задачи помогает решать. Это место для конкретного результата этапа и его визуальной демонстрации.'],
-  identity: ['Визуальная система', 'Здесь появится рассказ об идее и её развитии: от исходных ограничений до единого визуального языка. Изображения ниже пока заменены заглушками. В готовом кейсе они покажут принципы системы, детали исполнения и применение в реальных сценариях.'],
-  color: ['Цветовая система', 'Этот блок предназначен для палитры и правил её применения. Здесь можно показать семантику, темы, сочетания и поведение цвета в продукте. Содержание и изображения заменим на материалы конкретного проекта.'],
-  type: ['Типографика', 'Здесь появятся типографическая иерархия, характерные детали и примеры в интерфейсе. Важно показать систему в работе: заголовки, основной текст, подписи и сложные случаи. Пока этот текст и графика служат заглушками.'],
-  motion: ['Движение и взаимодействие', 'Здесь появится объяснение анимаций и переходов: что они помогают понять и как связывают состояния интерфейса. Место для прототипов и коротких видео. Сейчас в медиаблоках работают демонстрационные анимации.'],
-  components: ['Компоненты и паттерны', 'Этот блок предназначен для компонентов, их состояний и связей. Вместо разрозненной витрины здесь будут примеры того, как части системы собираются в цельный продукт. Пока показаны графические заглушки.'],
-  product: ['Система в продукте', 'Здесь появятся итоговые интерфейсы и сценарии: как визуальные принципы и компоненты работают вместе на разных экранах. Итоги, личный вклад и границы реализации будут описаны после отбора фактических материалов.'],
-};
+for (const project of projects) {
+  const order = project.layout.filter(block => block.media !== undefined).map(block => block.media);
+  const source = project.media;
+  project.media = order.map(index => source[index]);
+  project.layout = project.layout.map(block => block.media === undefined ? block : ({ ...block, media: order.indexOf(block.media) }));
+  project.coverRatio = project.media[0].ratio;
+}
+const categories = ['Все', 'Дизайн-системы', 'Продуктовый дизайн', 'Исследования'];
 
 
 const $ = (selector, parent = document) => parent.querySelector(selector);
@@ -440,15 +590,11 @@ const basePath = document.querySelector('meta[name="app-base"]')?.content || '';
 const href = path => `${basePath}${path}` || '/';
 const closeIcon = '<svg aria-hidden="true" viewBox="0 0 30 30" fill="none"><path d="m9 9 12 12M21 9 9 21" stroke="currentColor" stroke-width="1.3"/></svg>';
 const arrowIcon = '<svg aria-hidden="true" viewBox="0 0 24 24" fill="none"><path d="M4 12h15M13 5l7 7-7 7" stroke="currentColor" stroke-width="1.5"/></svg>';
-const mark = '<svg aria-hidden="true" viewBox="0 0 100 100" fill="none"><path d="M50 0 100 50 50 100 0 50Z" fill="currentColor"/><path d="M50 24 76 50 50 76 24 50Z" fill="var(--p0)"/></svg>';
 const state = { project: projects[0], route: null, gallery: null, galleryClosing: false, filter: 'Все', search: '', frame: 0, lastCase: '/project-01', homeTimer: null, navFrame: 0 };
 function hideGalleryCursor() {
   cursor.classList.remove('visible', 'previous');
 }
 let resizeFrame = 0;
-const mediaObserver = new IntersectionObserver(entries => {
-  entries.forEach(entry => $('.art', entry.target)?.classList.toggle('is-paused', !entry.isIntersecting));
-}, { rootMargin: '120px 0px' });
 
 $('.skip-link').addEventListener('click', e => {
   e.preventDefault();
@@ -482,32 +628,27 @@ function tick() {
 tick();
 setInterval(tick, 1000);
 
-function palette(project, offset = 0) {
-  const p = project.palette;
-  const c = offset % 4;
-  return `--p0:${p[c]};--p1:${p[(c + 1) % 4]};--p2:${p[(c + 2) % 4]};--p3:${p[(c + 3) % 4]}`;
+function diagramContent(media) {
+  const header = `<div class="diagram-heading"><span>COLLAPSE / МТС ЛИНК</span><h2>${esc(media.title)}</h2></div>`;
+  let body;
+  if (media.name === 'architecture') {
+    body = `<div class="diagram-packages">${[['Core', 'Общие основы'], ['Tokens', 'Значения и семантика'], ['Icons', 'Общая иконография'], ['Components', 'Компоненты и состояния']].map(([title, note]) => `<div><strong>${title}</strong><span>${note}</span></div>`).join('')}</div><div class="diagram-arrow" aria-hidden="true">↓</div><div class="diagram-foundation"><span>Core</span><i>→</i><span>Base</span><i>→</i><span>Modules</span></div><div class="diagram-modules"><div>Продуктовый модуль<br><small>Общие компоненты + своя логика</small></div><div>Продуктовый модуль<br><small>Общие компоненты + своя логика</small></div></div>`;
+  } else if (media.name === 'themes') {
+    body = `<div class="diagram-semantic"><span>Текст</span><span>Поверхности</span><span>Действия</span></div><div class="diagram-arrow" aria-hidden="true">↓</div><div class="diagram-themes">${['Light', 'Dark', 'Custom'].map((title, i) => `<div class="diagram-theme theme-${i}"><span>${title}</span><strong>Одна логика.<br>Свои значения.</strong><div><i></i><i></i><i></i></div></div>`).join('')}</div><p class="diagram-note">Семантика остаётся. Тема и бренд меняются.</p>`;
+  } else {
+    body = `<div class="diagram-workflow">${[['01', 'Задача', 'Контекст и ограничения'], ['02', 'Система', 'Компоненты, токены, правила'], ['03', 'Claude', 'Сборка интерфейса'], ['04', 'Дизайнер', 'Проверка и корректировка']].map(([number, title, note]) => `<div><span>${number}</span><strong>${title}</strong><small>${note}</small></div>`).join('')}</div><div class="diagram-feedback"><span aria-hidden="true">↶</span> Повторяющаяся ошибка → улучшение системы</div><p class="diagram-note">Работа над процессом продолжается</p>`;
+  }
+  return `<div class="case-diagram case-diagram--${media.name}" role="img" aria-label="${esc(media.alt)}">${header}<div class="diagram-body">${body}</div></div>`;
 }
 
-function art(project, kind = 'hero', index = 0, { animate = true } = {}) {
-  const offset = ['poster', 'type', 'wordmark', 'swatches'].includes(kind) ? 0 : Math.floor(index / 5) % 4;
-  let inside = '';
-  const number = String(index + 1).padStart(2, '0');
-  if (kind === 'hero') inside = `<div class="art__symbol">${mark}</div><div class="art__word"><span>PROJECT</span><span>${project.number}</span></div>`;
-  else if (kind === 'wordmark') inside = `<div class="art__word">${project.number}<br>PROJECT</div>`;
-  else if (kind === 'poster') inside = `<div class="art__word">A new<br>point<br>of view.</div>`;
-  else if (kind === 'monogram') inside = mark;
-  else if (kind === 'orbit') inside = '<div class="orbit"></div><div class="orbit"></div><div class="orbit"></div>';
-  else if (kind === 'swatches') inside = ['01', '02', '03', '04'].map(n => `<div class="swatch">${n}</div>`).join('');
-  else if (kind === 'tiles') inside = Array.from({ length: 6 }, () => `<div class="tile">${mark}</div>`).join('');
-  else if (kind === 'type') inside = '<div class="art__alphabet">Aa Bb<br>123.</div><div class="art__rule"></div><div class="art__letters">ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>abcdefghijklmnopqrstuvwxyz<br>0123456789?!&</div>';
-  else if (kind === 'portrait') inside = '<div class="portrait-silhouette"></div>';
-  else inside = `<div class="mock-window"><div class="mock-toolbar"><i class="mock-dot"></i><i class="mock-dot"></i><i class="mock-dot"></i><span>PROJECT ${project.number}</span></div><div class="mock-body"><div class="mock-sidebar">${'<i class="mock-line"></i>'.repeat(7)}</div><div class="mock-main"><div class="mock-heading">A place for<br>your next idea.</div><div class="mock-banner"></div><div class="mock-cards">${'<div class="mock-card"></div>'.repeat(3)}</div></div></div></div>`;
-  const staticStyle = !animate || reduceMotion.matches ? 'animation:none;' : '';
-  return `<div class="art art--${kind}${animate ? '' : ' is-static'}" style="${palette(project, offset)};${staticStyle}" role="img" aria-label="Графическая заглушка ${number}, ${esc(project.title)}">${inside}<span class="art__index" aria-hidden="true">PLACEHOLDER ${number}</span></div>`;
+function mediaContent(project, index = 0, { priority = false } = {}) {
+  const media = project.media[index];
+  if (media.kind === 'diagram') return diagramContent(media);
+  return `<img class="case-image" src="${esc(media.src)}" alt="${esc(media.alt)}" width="1600" height="${Math.round(1600 / media.ratio)}" loading="${priority ? 'eager' : 'lazy'}" decoding="async"${priority ? ' fetchpriority="high"' : ''}>`;
 }
 
-function cardInner(project, { background = true, selected = false } = {}) {
-  return `${background ? '<span class="nav__card__bg" aria-hidden="true"></span>' : ''}<div class="nav__card__img" style="${palette(project)}"><div class="nav-card-mark" data-symbol="${Number(project.number) % 4}" aria-hidden="true">${mark}</div></div><div class="nav__card__info"><h2>${esc(project.title)}</h2><p>${esc(project.description)}</p></div>`;
+function cardInner(project, { background = true } = {}) {
+  return `${background ? '<span class="nav__card__bg" aria-hidden="true"></span>' : ''}<div class="nav__card__img company-logo company-logo--${project.logoClass}"><img src="${esc(project.logo)}" alt="${esc(project.company)}" width="65" height="65" decoding="async"></div><div class="nav__card__info"><h2>${esc(project.title)}</h2><p>${esc(project.description)}</p></div>`;
 }
 
 function createNav() {
@@ -569,19 +710,22 @@ window.addEventListener('resize', () => {
   resizeFrame = requestAnimationFrame(resize);
 });
 
-function textBlock(key) {
-  if (key === 'intro') return `<div class="case__study__gallery__item"><div class="case__study__gallery__item__inner case__study__media__texts2 featured">${['challenge', 'solution'].map(k => `<section class="page__card case__study__media__text__text2"><h2>${copy[k][0]}</h2><div class="case__study__media__text__text__text2">${copy[k].slice(1).map(t => `<p>${esc(t)}</p>`).join('')}</div></section>`).join('')}</div></div>`;
-  const [title, ...paragraphs] = copy[key];
-  return `<div class="case__study__gallery__item"><div class="case__study__gallery__item__inner case__study__media__texts2 align-to-right"><section class="page__card case__study__media__text__text2"><h2>${esc(title)}</h2><div class="case__study__media__text__text__text2">${paragraphs.map(t => `<p>${esc(t)}</p>`).join('')}</div></section></div></div>`;
+function copyCard(section, featured = false) {
+  return `<section class="page__card case__study__media__text__text2${featured ? ' case-copy-featured' : ''}"><h2>${esc(section.title)}</h2><div class="case__study__media__text__text__text2">${section.paragraphs.map(t => `<p>${esc(t)}</p>`).join('')}</div></section>`;
+}
+
+function textBlock(project, block) {
+  if (block.intro) return `<div class="case__study__gallery__item"><div class="case__study__gallery__item__inner case__study__media__texts2 featured">${project.intro.map(s => copyCard(s, true)).join('')}</div></div>`;
+  return `<div class="case__study__gallery__item"><div class="case__study__gallery__item__inner case__study__media__texts2 align-to-right">${copyCard(project.sections[block.text])}</div></div>`;
 }
 
 function casePage(project) {
-  const info = Array.from({ length: 5 }, (_, i) => `<p>${esc(Object.values(copy)[i + 2][1])}</p>`).join('');
-  return `<div class="page__container"><div class="case__study__list"><div class="nav__card"><div class="nav__card__inner">${cardInner(project, { background: false })}</div></div><div class="case__study__slices">${caseLayout.map(block => {
-    if (block.text) return textBlock(block.text);
-    const ratio = block.ratio || 3 / 2;
-    return `<div class="case__study__gallery__item ${block.layout || ''}" data-media="${block.media}" data-ratio="${ratio}"><div class="case__study__gallery__item__inner"><section class="page__card case__study__media has-gallery" tabindex="0" role="button" aria-label="Открыть медиа ${block.media + 1} в галерее" style="--aspect:${ratio}" data-open-gallery="${block.media}">${art(project, block.kind, block.media)}</section></div></div>`;
-  }).join('')}</div><div class="case__study__info"><div class="case__study__info__left"><section class="page__card"><h2>Информация о проекте</h2><div class="case__study__info__project__information__text"><p>Это демонстрационная страница. Названия, текст и вся графика — заглушки. Здесь будут материалы выбранного проекта.</p>${info}</div></section></div><div class="case__study__info__right"><section class="page__card case__study__info__credits"><h2>Участники и вклад</h2><p>Арт-дирекшен:<br>Имя участника</p><p>Дизайн:<br>Имя участника</p><p>Разработка:<br>Команда проекта</p><h2>Статус</h2><p>Будет уточнён при подготовке кейса.</p><h2>Год</h2><p>20XX</p></section><section class="page__card"><h2>Материалы проекта</h2><p>Изображения и видео появятся после отбора материалов.</p></section></div></div></div></div>`;
+  const next = projects[(projects.indexOf(project) + 1) % projects.length];
+  return `<div class="page__container"><div class="case__study__list"><div class="nav__card"><div class="nav__card__inner">${cardInner(project, { background: false })}</div></div><header class="page__card case-heading"><div><p>${esc(project.company)}</p><h1>${esc(project.title)}</h1></div><span class="case-status">${esc(project.status)}</span></header><div class="case__study__slices">${project.layout.map(block => {
+    if (block.intro || block.text !== undefined) return textBlock(project, block);
+    const media = project.media[block.media];
+    return `<div class="case__study__gallery__item ${block.layout || ''}" data-media="${block.media}" data-ratio="${media.ratio}"><figure class="case__study__gallery__item__inner"><div class="page__card case__study__media has-gallery" tabindex="0" role="button" aria-label="Открыть медиа ${block.media + 1} в галерее" aria-describedby="media-caption-${block.media}" style="--aspect:${media.ratio}" data-open-gallery="${block.media}">${mediaContent(project, block.media, { priority: block.media === 0 })}</div><figcaption id="media-caption-${block.media}" class="case-caption">${esc(media.caption)}</figcaption></figure></div>`;
+  }).join('')}</div><div class="case__study__info"><div class="case__study__info__left"><section class="page__card"><h2>Результат</h2><div class="case__study__info__project__information__text"><p>${esc(project.result)}</p></div></section></div><div class="case__study__info__right"><section class="page__card case__study__info__credits"><h2>Роль</h2><p>${esc(project.role)}</p><h2>Мой вклад</h2><p>${esc(project.ownership)}</p><h2>Команда</h2><p>${esc(project.team)}</p><h2>Контекст</h2><p>${esc(project.context)}</p><h2>Статус</h2><p>${esc(project.status)}</p></section></div></div><a class="page__card case-next" href="${href('/' + next.id)}" data-route><div><span>Следующий кейс</span><p>${esc(next.title)}</p></div>${arrowIcon}</a></div></div>`;
 }
 
 function allPage() {
@@ -595,7 +739,7 @@ function renderGrid() {
   const order = [...projects];
   [order[0], order[1]] = [order[1], order[0]];
   const query = state.search.trim().toLocaleLowerCase('ru');
-  const filtered = order.filter(p => (state.filter === 'Все' || p.category === state.filter) && `${p.title} ${p.description} ${p.category} ${p.id}`.toLocaleLowerCase('ru').includes(query));
+  const filtered = order.filter(p => (state.filter === 'Все' || p.category === state.filter) && `${p.title} ${p.company} ${p.description} ${p.category} ${p.slug} ${p.id}`.toLocaleLowerCase('ru').includes(query));
   const columns = Array.from({ length: count }, () => []);
   const heights = Array(count).fill(0);
   const width = (innerWidth - 16 - (count - 1) * 8) / count;
@@ -604,7 +748,7 @@ function renderGrid() {
     columns[column].push(project);
     heights[column] += width / project.coverRatio + 77;
   }
-  grid.innerHTML = columns.map(column => `<div class="case__studies__column">${column.map(p => `<a class="case__studies__card" href="${href(`/${p.id}`)}" data-route><div class="case__studies__card__media" style="--cover-ratio:${p.coverRatio}">${art(p, p.coverKind, 0, { animate: false })}</div><h2>${esc(p.title)}</h2><p>${esc(p.description)}</p></a>`).join('')}</div>`).join('');
+  grid.innerHTML = columns.map(column => `<div class="case__studies__column">${column.map(p => `<a class="case__studies__card" href="${href(`/${p.id}`)}" data-route><div class="case__studies__card__media" style="--cover-ratio:${p.coverRatio}">${mediaContent(p, 0)}</div><h2>${esc(p.title)}</h2><p>${esc(p.description)}</p></a>`).join('')}</div>`).join('');
   $('.case__studies__empty').hidden = filtered.length > 0;
   grid.hidden = filtered.length === 0;
 }
@@ -632,17 +776,17 @@ function bindAll() {
 }
 
 function homePage() {
-  return `<div class="page__container"><div class="page__card home__hero" id="home-hero">${art(projects[0], 'monogram', 0)}</div><div class="home__cards">${projects.map((p, i) => `<a href="${href(`/${p.id}`)}" data-route class="page__card home-update">${art(p, ['poster', 'tiles', 'type', 'interface', 'orbit', 'wordmark'][i], i, { animate: false })}<div><p>Обновление ${p.number}</p><h2>Место для короткого рассказа о работе</h2></div></a>`).join('')}</div></div>`;
+  return `<div class="page__container"><div class="page__card home__hero" id="home-hero">${mediaContent(projects[0], 0, { priority: true })}</div><div class="home__cards">${projects.map(p => `<a href="${href('/' + p.id)}" data-route class="page__card home-update"><div class="home-update-image" style="--cover-ratio:${p.coverRatio}">${mediaContent(p, 0)}</div><div><p>${esc(p.company)}</p><h2>${esc(p.title)}</h2><p class="home-update-description">${esc(p.description)}</p></div></a>`).join('')}</div></div>`;
 }
 
 const offerings = [
-  ['Дизайн-системы', 'Здесь появится рассказ об архитектуре, компонентах, темах и правилах работы с системой.', 'Архитектура · Компоненты · Токены · Документация'],
-  ['Продукты', 'Здесь появится рассказ о проектировании цифровых продуктов, сценариев и интерфейсов.', 'Исследования · Сценарии · Интерфейсы · Прототипы'],
-  ['Арт-дирекшен', 'Здесь появится рассказ о визуальном направлении и работе над качеством продукта.', 'Визуальная система · Типографика · Движение · Ревью'],
+  ['Дизайн-системы', 'Создаю архитектуру, компоненты, токены и правила, которые помогают разным продуктам работать как единая система.', 'Архитектура · Компоненты · Темы · White Label · Гайды'],
+  ['Продукты', 'Разбираюсь в задачах пользователей и бизнеса, определяю границы MVP, проектирую сценарии и проверяю решения вместе с командой.', 'Исследования · Сценарии · UX/UI · Прототипы · Доставка'],
+  ['Арт-дирекшен', 'Задаю визуальное направление и связываю его с логикой продукта. Помогаю команде сохранять качество от первых решений до реализации.', 'Визуальная система · Типографика · Ревью · Процесс'],
 ];
 
 function aboutPage() {
-  return `<div class="page__container"><section class="page__card about__hero">${art(projects[1], 'portrait', 0, { animate: false })}</section><div class="about__content"><div class="about__content__left"><section class="page__card"><h2>Обо мне</h2><div class="about__lead"><p>Алексей Агаев — арт-директор в МТС Линк.</p><p>Здесь появится рассказ о моей работе, подходе и опыте. Пока это место для будущего текста: финальную самопрезентацию подготовим после отбора проектов.</p></div></section><section class="page__card"><h2>Направления</h2><div class="about__offerings__tabs" role="tablist" aria-label="Направления работы">${offerings.map((o, i) => `<button role="tab" id="offering-tab-${i}" aria-selected="${i === 0}" aria-controls="offering-panel" tabindex="${i === 0 ? 0 : -1}" class="about__offerings__tab${i === 0 ? ' selected' : ''}" data-offering="${i}">${o[0]}</button>`).join('')}</div><div class="about__offering" role="tabpanel" id="offering-panel" aria-labelledby="offering-tab-0"><p class="about__lead" id="offering-copy">${offerings[0][1]}</p><p class="about__offering__services" id="offering-services">${offerings[0][2]}</p></div></section></div><div class="about__content__right"><section class="page__card about__contact"><h2>Контакты</h2><h3>Почта</h3><p>email@example.com</p><h3 style="margin-top:24px">Ссылки</h3><p>Появятся позже</p><div class="about__location"><div class="analog-clock" aria-hidden="true"><span class="analog-hand hour"></span><span class="analog-hand minute"></span></div><div>Москва<p style="color:var(--color-gray50)">Местное время</p></div></div></section><section class="page__card"><h2>Сейчас</h2><p style="margin-top:16px">Здесь появится короткое обновление о текущей работе.</p></section></div></div></div>`;
+  return `<div class="page__container"><section class="page__card about__hero"><img class="about-portrait" src="${profile.portrait}" alt="Алексей Агаев" width="640" height="640" fetchpriority="high"></section><div class="about__content"><div class="about__content__left"><section class="page__card"><h2>Обо мне</h2><div class="about__lead"><p>Алексей Агаев — арт-директор в МТС Линк.</p><p>Создаю дизайн-системы и цифровые продукты. В дизайне с 2018 года: от интерфейсов и исследований до архитектуры систем и взаимодействия команд.</p><p>В МТС Линк с нуля построил большую дизайн-систему для экосистемы продуктов, затем заново выстроил её под работу через Claude. До этого работал над продуктами и дизайн-системами Газпром-Медиа.</p></div></section><section class="page__card"><h2>Направления</h2><div class="about__offerings__tabs" role="tablist" aria-label="Направления работы">${offerings.map((o, i) => `<button role="tab" id="offering-tab-${i}" aria-selected="${i === 0}" aria-controls="offering-panel" tabindex="${i === 0 ? 0 : -1}" class="about__offerings__tab${i === 0 ? ' selected' : ''}" data-offering="${i}">${o[0]}</button>`).join('')}</div><div class="about__offering" role="tabpanel" id="offering-panel" aria-labelledby="offering-tab-0"><p class="about__lead" id="offering-copy">${offerings[0][1]}</p><p class="about__offering__services" id="offering-services">${offerings[0][2]}</p></div></section></div><div class="about__content__right"><section class="page__card about__contact"><h2>Контакты</h2><h3>Почта</h3><p><a href="mailto:${profile.email}">${profile.email}</a></p><h3 style="margin-top:24px">Профиль</h3><p><a href="${profile.linkedin}" target="_blank" rel="noopener noreferrer">LinkedIn ${arrowIcon}</a></p><div class="about__location"><div class="analog-clock" aria-hidden="true"><span class="analog-hand hour"></span><span class="analog-hand minute"></span></div><div>Москва<p style="color:var(--color-gray50)">Местное время</p></div></div></section><section class="page__card"><h2>Сейчас</h2><p style="margin-top:16px">Развиваю Collapse и процесс, в котором дизайнеры собирают правильные интерфейсы через Claude, опираясь на компоненты и правила системы.</p></section></div></div></div>`;
 }
 
 function bindAbout() {
@@ -683,7 +827,6 @@ function navigate(path, { push = true, instant = false } = {}) {
   hideGalleryCursor();
   if (state.gallery !== null) closeGallery({ scroll: false });
   clearInterval(state.homeTimer);
-  mediaObserver.disconnect();
   if (push && `${location.pathname}${location.search}` !== href(path)) history.pushState({}, '', href(path));
   state.route = next.type;
   document.body.dataset.template = next.type;
@@ -695,10 +838,6 @@ function navigate(path, { push = true, instant = false } = {}) {
     state.project = next.project;
     state.lastCase = `/${next.project.id}`;
     content.innerHTML = casePage(next.project);
-    $$('.case__study__media').forEach(media => {
-      $('.art', media).classList.add('is-paused');
-      mediaObserver.observe(media);
-    });
     document.title = `${next.project.title} · ${profile.name}`;
   } else if (next.type === 'all') {
     content.innerHTML = allPage();
@@ -717,7 +856,7 @@ function navigate(path, { push = true, instant = false } = {}) {
       if (document.hidden || state.route !== 'home' || (mobile.matches && !document.body.classList.contains('feed-open'))) return;
       frame = (frame + 1) % projects.length;
       const hero = $('#home-hero');
-      if (hero) hero.innerHTML = art(projects[frame], ['monogram', 'poster', 'wordmark', 'tiles', 'type', 'orbit'][frame % 6], frame, { animate: false });
+      if (hero) hero.innerHTML = mediaContent(projects[frame], 0, { priority: true });
     }, 700);
   } else {
     content.innerHTML = `<div class="page__container"><div class="page__card not-found"><p>Такой страницы пока нет.</p><a class="page__button" href="${href('/all')}" data-route>Все проекты ${arrowIcon}</a></div></div>`;
@@ -738,7 +877,7 @@ function navigate(path, { push = true, instant = false } = {}) {
   $('#announcer').textContent = document.title;
 }
 
-function mediaBlocks() { return caseLayout.filter(block => block.media !== undefined); }
+function mediaBlocks() { return state.project.media.map((media, index) => ({ ...media, media: index })); }
 
 function sizeSlide() {
   const block = mediaBlocks()[state.gallery];
@@ -772,7 +911,7 @@ function openGallery(index) {
   state.galleryFocus = document.activeElement;
   state.pageScroll = window.scrollY;
   const block = mediaBlocks()[index];
-  galleryRoot.innerHTML = `<div class="case__study__gallery" role="dialog" aria-modal="true" aria-label="Галерея: ${esc(state.project.title)}"><div class="case__study__gallery__inner"><div class="case__study__gallery__top"><button class="page__button__close" data-gallery-close type="button" aria-label="Закрыть галерею">${closeIcon}</button></div><div class="case__study__gallery__wrapper"><div class="gallery-slide">${art(state.project, block.kind, block.media)}</div><div class="case__study__gallery__nav"><button class="case__study__gallery__nav__button prev" data-gallery-prev type="button" aria-label="Предыдущее медиа"></button><button class="case__study__gallery__nav__button next" data-gallery-next type="button" aria-label="Следующее медиа"></button></div></div><div class="case__study__gallery__pagination" aria-label="Выбор медиа"></div></div></div>`;
+  galleryRoot.innerHTML = `<div class="case__study__gallery" role="dialog" aria-modal="true" aria-label="Галерея: ${esc(state.project.title)}"><div class="case__study__gallery__inner"><div class="case__study__gallery__top"><button class="page__button__close" data-gallery-close type="button" aria-label="Закрыть галерею">${closeIcon}</button></div><div class="case__study__gallery__wrapper"><div class="gallery-slide">${mediaContent(state.project, index, { priority: true })}</div><div class="case__study__gallery__nav"><button class="case__study__gallery__nav__button prev" data-gallery-prev type="button" aria-label="Предыдущее медиа"></button><button class="case__study__gallery__nav__button next" data-gallery-next type="button" aria-label="Следующее медиа"></button></div></div><div class="gallery-footer"><p class="gallery-caption" id="gallery-caption">${esc(block.caption)}</p><div class="case__study__gallery__pagination" aria-label="Выбор медиа"></div></div></div></div>`;
   document.body.style.overflow = 'hidden';
   document.body.classList.add('gallery-open');
   $('#app').inert = true;
@@ -841,8 +980,9 @@ function changeSlide(index) {
   state.gallery = index;
   const stage = $('.gallery-slide');
   const block = blocks[index];
-  stage.innerHTML = art(state.project, block.kind, block.media);
+  stage.innerHTML = mediaContent(state.project, index, { priority: true });
   sizeSlide();
+  $('#gallery-caption').textContent = block.caption || '';
   renderDots();
   hideGalleryCursor();
   $('#announcer').textContent = `Медиа ${index + 1} из ${blocks.length}`;
