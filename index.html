@@ -37,6 +37,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,[tabindex]:focus-visibl
 .skip-link:focus{transform:translateY(0)}
 .wrapper{display:flex;align-items:flex-start;min-height:100svh}
 .content{flex:1;min-width:0;outline:0}
+.content:focus-visible{outline:0}
 .page__container{padding:8px}
 .page__card{background:var(--color-gray10);border-radius:var(--radius-card);padding:16px;transition:none}
 .page__button{display:flex;align-items:center;justify-content:center;gap:8px;background:var(--color-gray10);border-radius:40px;min-height:40px;padding:0 16px;transition:none;white-space:nowrap}
@@ -104,20 +105,25 @@ html.light .nav__card__bg{background:radial-gradient(76.17% 129.78% at 23.83% 65
 .case__study__gallery__item__inner{position:relative;height:100%}
 .case__study__media{position:relative;display:flex;padding:0;overflow:hidden;aspect-ratio:var(--aspect,1.5);cursor:pointer}
 .case__study__media:hover{cursor:zoom-in}
-.case__study__media__texts2{display:grid;gap:8px;grid-template-columns:1fr 1fr;align-items:stretch}
+.case__study__media__texts2{display:grid;gap:8px;grid-template-columns:repeat(2,minmax(0,1fr));align-items:stretch}
 .case__study__media__text__text2 h2{color:var(--color-gray50);margin-bottom:8px}
 .case__study__media__text__text2 p{min-height:1.17em}
 .case__study__media__text__text2 p+p{margin-top:1.17em}
-.case__study__media__texts2.featured .case__study__media__text__text2{min-height:450px;padding:24px}
+.case__study__media__texts2.featured .case__study__media__text__text2{padding:24px}
 .case__study__media__texts2.featured .case__study__media__text__text__text2{font-family:sf-pro-display,-apple-system,sans-serif;font-size:23px;line-height:27px;letter-spacing:.25px}
-.case__study__info{align-items:flex-start;display:grid;gap:8px;grid-template-columns:2fr 1fr;margin-top:8px}
-.case__study__info__left,.case__study__info__right{display:flex;flex-flow:column;gap:8px;min-width:0}
-.case__study__info h2{color:var(--color-gray50);margin-bottom:8px}
-.case__study__info h2:not(:first-child){margin-top:32px}
-.case__study__info p:not(:last-child){margin-bottom:12px}
-.case__study__info__project__information__text{padding-right:10%}
-.case__study__info__credits h2:first-child{margin-bottom:16px}
-.case__study__info__credits p{line-height:1.4}
+.case-summary{margin-top:8px}
+.case-summary h2,.case-summary dt{color:var(--color-gray50);margin-bottom:6px}
+.case-summary p,.case-summary dd{max-width:80ch;line-height:1.4}
+.case-summary dl{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:16px 24px;
+  margin:16px 0 0;
+  padding-top:16px;
+  border-top:1px solid var(--color-gray10);
+}
+.case-summary dl>div:first-child{grid-column:1/-1}
+.case-summary dd{margin:0}
 .case-next{display:flex;justify-content:space-between;align-items:center;gap:24px;text-align:left;width:100%;transition:none}
 .case-next:hover{background:var(--color-gray10-hover)}
 .case-next span{color:var(--color-gray50)}
@@ -128,7 +134,6 @@ html.light .nav__card__bg{background:radial-gradient(76.17% 129.78% at 23.83% 65
   .case__study__gallery__item.position-left{grid-column:1/2}
   .case__study__gallery__item.position-right{grid-column:2/-1}
   .split-rows .case__study__media{aspect-ratio:auto;height:100%}
-  .case__study__media__texts2.align-to-right>.page__card{grid-column:2/-1}
 }
 /* Placeholder artwork stays inside the reference media rectangles. */
 .art{position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;width:100%;height:100%;background:var(--p0);color:var(--p1);container-type:inline-size;isolation:isolate}
@@ -272,7 +277,6 @@ html.light .page__cursor{background:#ebebeb}
 .not-found{min-height:calc(100svh - 16px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;text-align:center}
 @media(max-width:1280px){.home__cards{grid-template-columns:1fr 1fr}}
 @media(max-width:1024px){
-  .case__study__info{grid-template-columns:1fr}
   .case__studies__cards{grid-template-columns:repeat(3,minmax(0,1fr))}
   .case__studies__filters__top__inner{width:calc((100vw - 32px)/3)}
   .home__cards{grid-template-columns:1fr}
@@ -281,8 +285,8 @@ html.light .page__cursor{background:#ebebeb}
 }
 @media(max-width:912px){
   .case__study__media__texts2{grid-template-columns:1fr}
-  .case__study__media__texts2.featured .case__study__media__text__text2{min-height:clamp(200px,calc(-92.8571428571px + 44.64285714vw),250px);padding:16px}
-  .case__study__media__texts2:not(.featured) .page__card{padding-right:24px;padding-bottom:48px}
+  .case__study__media__texts2.featured .case__study__media__text__text2{padding:16px}
+  .case-summary dl{grid-template-columns:1fr;gap:12px}
 }
 @media(max-width:768px){
   :root{--br:12px}
@@ -314,7 +318,6 @@ html.light .page__cursor{background:#ebebeb}
   .case__study__list>.nav__card{display:block}
   .case__study__list>.nav__card>.nav__card__inner{height:auto;min-height:80px}
   .case__study__list>.nav__card .nav__card__img{height:56px;width:56px}
-  .case__study__info__project__information__text{padding-right:0}
   .case__studies__filters__top__inner{width:calc(100% - 46px)}
   .case__studies__cards{grid-template-columns:1fr}
   .is-all .page__container{padding-top:8px}
@@ -345,16 +348,13 @@ html.light .page__cursor{background:#ebebeb}
 .case-status{font-size:12px;line-height:1.3;color:var(--color-gray50);text-align:right;max-width:45%}
 .case-image{display:block;width:100%;height:100%;object-fit:contain;pointer-events:none}
 .case-caption{font-size:12px;line-height:1.4;color:var(--color-gray50);padding:8px 4px 12px;overflow-wrap:anywhere}
-.case__study__media__texts2.featured .case__study__media__text__text2{min-height:0}
-.case__study__media__texts2.align-to-right>section{grid-column:2/-1}
 .case-copy-featured h2{margin-bottom:16px}
 .case-next{margin-top:8px;padding:24px}
 .case-next p{font-size:23px;margin-top:8px}
 .gallery-footer{display:flex;flex-direction:column;justify-content:center;align-items:center;padding:0 12px;min-width:0}
 .gallery-caption{font-size:11px;line-height:14px;color:var(--color-gray50);max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .gallery-slide>.case-image,.gallery-slide>.case-diagram{width:100%;height:100%}
-.home-update-image{aspect-ratio:1.4;overflow:hidden;border-radius:var(--radius-small)}
-.home-update-image .case-image{object-fit:cover}
+.home-update-image{aspect-ratio:var(--cover-ratio);overflow:hidden;border-radius:var(--radius-small)}
 .home-update-description{margin-top:8px}
 .home-update h2{font-size:18px}
 .about-portrait{display:block;width:100%;height:100%;object-fit:contain;background:#242424}
@@ -393,7 +393,6 @@ html.light .page__cursor{background:#ebebeb}
 .diagram-workflow small{font-size:clamp(9px,1vw,13px);line-height:1.3;color:#77727f}
 .diagram-feedback{padding:16px;background:#e1d8ee;border-radius:var(--radius-card);font-size:clamp(11px,1.5vw,20px);text-align:center}
 .diagram-feedback>span{margin-right:12px}
-@media(max-width:912px){.case__study__media__texts2.align-to-right>section{grid-column:1/-1}}
 @media(max-width:656px){
  .case-heading{gap:12px}.case-heading h1{font-size:23px}.case-status{font-size:10px;max-width:42%}
  .case-caption{font-size:11px}.case-next{padding:16px}
@@ -420,7 +419,15 @@ const profile = {
   about: 'Арт-директор в МТС Линк. Создаю дизайн-системы, продукты и процессы работы с ИИ.',
   email: 'niaa00666@gmail.com', linkedin: 'https://www.linkedin.com/in/alexey-agaev-959104362/', portrait: './portrait.webp',
 };
-const image = (name, ratio, alt, caption) => ({ kind: 'image', src: `./case-${name}.webp`, ratio, alt, caption });
+const image = (name, width, height, alt, caption) => ({
+  kind: 'image',
+  src: `./case-${name}.webp?v=2`,
+  width,
+  height,
+  ratio: width / height,
+  alt,
+  caption,
+});
 const diagram = (name, title, caption) => ({ kind: 'diagram', name, title, ratio: 1, alt: title, caption });
 const section = (title, ...paragraphs) => ({ title, paragraphs });
 
@@ -446,7 +453,7 @@ const projects = [
       section('Что получилось', 'Создана большая дизайн-система для экосистемы МТС Линк и основа для работы дизайнеров через Claude. Мой вклад — дизайн-архитектура, компоненты, правила и качество интерфейса; инженерная реализация и внедрение — совместная работа с разработкой и продуктовыми командами.', 'Дальнейший фокус — покрытие продуктовых сценариев и качество сборки экранов. Ценность системы определяется тем, насколько правильно и предсказуемо она работает в реальных задачах дизайнеров.'),
     ],
     media: [
-      image('collapse-cover', 1920 / 1272, 'Визуальное направление Collapse: интерфейсные карточки и графические материалы', 'Визуальное направление Collapse из материалов проекта.'),
+      image('collapse-cover', 1920, 1277, 'Визуальное направление Collapse: интерфейсные карточки и графические материалы', 'Визуальное направление Collapse из материалов проекта.'),
       diagram('architecture', 'Общая архитектура Collapse', 'Схема архитектурного подхода: пакеты системы и продуктовые модули.'),
       diagram('themes', 'Одна система — разные темы', 'Принцип семантических токенов и темизации. Схема подготовлена для этого кейса.'),
       diagram('workflow', 'Дизайнер, система и Claude', 'Модель работы, которую я развиваю: сборка по правилам системы и проверка дизайнером.'),
@@ -473,12 +480,12 @@ const projects = [
       section('От макета до работающего продукта', 'С командой разбирали каждый пользовательский сценарий, формулировали системные требования и критерии приёмки в Jira. На dev-стенде я сверял реализацию с макетами, описывал правки и возвращал задачи на доработку.', 'После исправлений передавали задачу в QA. Результат — запущенный портал, собственный канал коммуникации с кандидатами и рабочий интерфейс HR для вакансий и согласований.'),
     ],
     media: [
-      image('career-cover', 1920 / 1440, 'Первый экран карьерного портала Газпром-Медиа и начало списка вакансий', 'Публичный сайт. Деталь главной страницы из финального макета.'),
-      image('career-prototype', 1920 / 1080, 'Прототип HR-админки с настройками вакансии в боковой панели', 'Первая структура HR-интерфейса: настройки вакансии и боковая панель.'),
-      image('career-admin', 1920 / 1080, 'HR-интерфейс: список вакансий, фильтры, статусы и подтверждение отправки', 'Работа с вакансиями: статусы, фильтры и подтверждение действия. В макете — демонстрационное наполнение.'),
-      image('career-editor', 1920 / 714, 'Редактирование вакансии в HR-интерфейсе', 'Редактор вакансии в согласованном объёме MVP.'),
-      image('career-identity', 1598 / 1282, 'Визуальные материалы и айдентика карьерного портала', 'Визуальный контекст и айдентика внутри бренда холдинга.'),
-      image('career-internships', 1920 / 1440, 'Начало страницы стажировок Газпром-Медиа', 'Страница стажировок: знакомство с программой и переход к возможностям.'),
+      image('career-cover', 1920, 920, 'Первый экран карьерного портала Газпром-Медиа', 'Первый экран публичного сайта из финального макета.'),
+      image('career-prototype', 1920, 1080, 'Прототип HR-админки с настройками вакансии в боковой панели', 'Первая структура HR-интерфейса: настройки вакансии и боковая панель.'),
+      image('career-admin', 1920, 1080, 'HR-интерфейс: список вакансий, фильтры, статусы и подтверждение отправки', 'Работа с вакансиями: статусы, фильтры и подтверждение действия. В макете — демонстрационное наполнение.'),
+      image('career-editor', 1920, 714, 'Редактирование вакансии в HR-интерфейсе', 'Редактор вакансии в согласованном объёме MVP.'),
+      image('career-identity', 1598, 1282, 'Визуальные материалы и айдентика карьерного портала', 'Визуальный контекст и айдентика внутри бренда холдинга.'),
+      image('career-internships', 1920, 1110, 'Страница стажировок Газпром-Медиа с преимуществами программы', 'Знакомство с программой стажировок и её преимуществами.'),
     ],
     layout: [{ media: 0 }, { intro: true }, { text: 0 }, { media: 1 }, { text: 1 }, { media: 2 }, { media: 3 }, { text: 2 }, { media: 4 }, { text: 3 }, { media: 5 }, { text: 4 }],
   },
@@ -502,12 +509,12 @@ const projects = [
       section('Из библиотеки — в продукт', 'Система получила реализацию в Storybook. Для карьерного портала использовал её как основу HR-админки: готовые компоненты помогали собирать и обсуждать реальные сценарии работы с вакансиями.', 'Ценность дизайн-системы раскрывается в конкретном продукте: через ясные правила, гибкую композицию и сотрудничество с разработкой.'),
     ],
     media: [
-      image('orion-cover', 1920 / 1406, 'Пример интерфейса, собранного из компонентов Orion', 'Компоненты Orion в продуктовом контексте. Демонстрационный экран.'),
-      image('orion-components', 1650 / 1626, 'Композиция форм, панелей и модальных компонентов Orion', 'Композиция компонентов и состояний.'),
-      image('orion-guidelines', 1682 / 1634, 'Гайд боковой панели Orion с назначением и примерами', 'Документация боковой панели: назначение и правила применения.'),
-      image('orion-type', 1920 / 1309, 'Типографическая система Orion на базе Inter', 'Типографика: иерархия и параметры текстовых стилей.'),
-      image('orion-motion', 1464 / 1462, 'Настройка кривых и времени анимации в Orion', 'Токенизация переходов: готовые пресеты и индивидуальные настройки.'),
-      image('orion-tokens', 1532 / 1452, 'Семантические токены Orion', 'Связь значений с назначением элементов.'),
+      image('orion-cover', 1920, 1373, 'Пример интерфейса, собранного из компонентов Orion', 'Компоненты Orion в продуктовом контексте. Демонстрационный экран.'),
+      image('orion-components', 1650, 1626, 'Композиция форм, панелей и модальных компонентов Orion', 'Композиция компонентов и состояний.'),
+      image('orion-guidelines', 1682, 1634, 'Гайд боковой панели Orion с назначением и примерами', 'Документация боковой панели: назначение и правила применения.'),
+      image('orion-type', 1920, 1309, 'Типографическая система Orion на базе Inter', 'Типографика: иерархия и параметры текстовых стилей.'),
+      image('orion-motion', 1464, 1462, 'Настройка кривых и времени анимации в Orion', 'Токенизация переходов: готовые пресеты и индивидуальные настройки.'),
+      image('orion-tokens', 1532, 1452, 'Семантические токены Orion', 'Связь значений с назначением элементов.'),
     ],
     layout: [{ media: 0 }, { intro: true }, { text: 0 }, { media: 1 }, { text: 1 }, { media: 3 }, { media: 5 }, { text: 2 }, { media: 2 }, { media: 4 }, { text: 3 }, { text: 4 }],
   },
@@ -531,10 +538,10 @@ const projects = [
       section('Чем закончился проект', 'Результат моей работы — исследование процесса, выбор границ MVP, архитектура сценариев, прототипы и дизайн-система. Проект был остановлен до разработки.', 'Главный вывод: в сложном B2B-продукте важно выбирать не максимальное число ролей и функций, а законченный сценарий с понятной ценностью для конкретного пользователя.'),
     ],
     media: [
-      image('quanta-cover', 1920 / 1084, 'Прототип аналитического раздела рекламной платформы', 'Прототип РПС с демонстрационными данными. Продукт не был реализован.'),
-      image('quanta-systems', 1920 / 685, 'Декомпозиция между РПС, CRM, трафик-системой и ERP', 'Какие функции берёт РПС и с чем интегрируется.'),
-      image('quanta-journey', 1920 / 797, 'Карта пути медийной сделки по ролям', 'As-Is CJM: путь сделки и передача ответственности.'),
-      image('quanta-scope', 1920 / 1008, 'Текущий и целевой процесс рекламной сделки', 'Сравнение процессов для определения ядра MVP.'),
+      image('quanta-cover', 1920, 1084, 'Прототип аналитического раздела рекламной платформы', 'Прототип РПС с демонстрационными данными. Продукт не был реализован.'),
+      image('quanta-systems', 1920, 685, 'Декомпозиция между РПС, CRM, трафик-системой и ERP', 'Какие функции берёт РПС и с чем интегрируется.'),
+      image('quanta-journey', 1920, 797, 'Карта пути медийной сделки по ролям', 'As-Is CJM: путь сделки и передача ответственности.'),
+      image('quanta-scope', 1920, 1008, 'Текущий и целевой процесс рекламной сделки', 'Сравнение процессов для определения ядра MVP.'),
     ],
     layout: [{ media: 0 }, { intro: true }, { text: 0 }, { media: 1 }, { text: 1 }, { media: 2 }, { text: 2 }, { media: 3 }, { text: 3 }, { text: 4 }],
   },
@@ -558,11 +565,11 @@ const projects = [
       section('Результат проектирования', 'Работа завершилась MVP-стратегией, приоритетами и макетами. Следующим этапом должны были стать проверки интерактивных прототипов и работа с разработкой, но до реализации проект не дошёл.', 'Главная ценность этого этапа — связать потребности трёх аудиторий, сузить первый продукт и сделать явными решения, которые ещё требовали проверки.'),
     ],
     media: [
-      image('rutube-cover', 1920 / 1211, 'Страница просмотра Rutube International на вебе и мобильном экране', 'UI-драфты страницы просмотра. Проект не был реализован.'),
-      image('rutube-feed', 1920 / 1087, 'UI-драфт главной страницы Rutube International', 'Главная страница: навигация, категории и обнаружение контента.'),
-      image('rutube-priorities', 1920 / 1078, 'Карточки гипотез для MVP Rutube International', 'Приоритизация гипотез и определение скоупа MVP.'),
-      image('rutube-jobs', 1376 / 532, 'JTBD и варианты решения задачи рекламы без прерывания просмотра', 'Задача пользователя и варианты решения в пределах MVP.'),
-      image('rutube-tree', 1920 / 1269, 'Дерево возможностей и гипотез видеоплатформы', 'Связь продуктовых целей и проверяемых гипотез.'),
+      image('rutube-cover', 1920, 1211, 'Страница просмотра Rutube International на вебе и мобильном экране', 'UI-драфты страницы просмотра. Проект не был реализован.'),
+      image('rutube-feed', 1920, 1081, 'UI-драфт главной страницы Rutube International', 'Главная страница: навигация, категории и обнаружение контента.'),
+      image('rutube-priorities', 1920, 1078, 'Карточки гипотез для MVP Rutube International', 'Приоритизация гипотез и определение скоупа MVP.'),
+      image('rutube-jobs', 1376, 532, 'JTBD и варианты решения задачи рекламы без прерывания просмотра', 'Задача пользователя и варианты решения в пределах MVP.'),
+      image('rutube-tree', 1920, 1269, 'Дерево возможностей и гипотез видеоплатформы', 'Связь продуктовых целей и проверяемых гипотез.'),
     ],
     layout: [{ media: 0 }, { intro: true }, { text: 0 }, { media: 2 }, { text: 1 }, { media: 3 }, { media: 4 }, { text: 2 }, { media: 1 }, { text: 3 }, { text: 4 }],
   },
@@ -644,7 +651,7 @@ function diagramContent(media) {
 function mediaContent(project, index = 0, { priority = false } = {}) {
   const media = project.media[index];
   if (media.kind === 'diagram') return diagramContent(media);
-  return `<img class="case-image" src="${esc(media.src)}" alt="${esc(media.alt)}" width="1600" height="${Math.round(1600 / media.ratio)}" loading="${priority ? 'eager' : 'lazy'}" decoding="async"${priority ? ' fetchpriority="high"' : ''}>`;
+  return `<img class="case-image" src="${esc(media.src)}" alt="${esc(media.alt)}" width="${media.width}" height="${media.height}" loading="${priority ? 'eager' : 'lazy'}" decoding="async"${priority ? ' fetchpriority="high"' : ''}>`;
 }
 
 function cardInner(project, { background = true } = {}) {
@@ -715,17 +722,55 @@ function copyCard(section, featured = false) {
 }
 
 function textBlock(project, block) {
-  if (block.intro) return `<div class="case__study__gallery__item"><div class="case__study__gallery__item__inner case__study__media__texts2 featured">${project.intro.map(s => copyCard(s, true)).join('')}</div></div>`;
-  return `<div class="case__study__gallery__item"><div class="case__study__gallery__item__inner case__study__media__texts2 align-to-right">${copyCard(project.sections[block.text])}</div></div>`;
+  const sections = block.intro ? project.intro : [project.sections[block.text]];
+  return `<div class="case__study__gallery__item">
+    <div class="case__study__gallery__item__inner case__study__media__texts2${block.intro ? ' featured' : ''}">
+      ${sections.map(section => copyCard(section, block.intro)).join('')}
+    </div>
+  </div>`;
 }
 
 function casePage(project) {
   const next = projects[(projects.indexOf(project) + 1) % projects.length];
-  return `<div class="page__container"><div class="case__study__list"><div class="nav__card"><div class="nav__card__inner">${cardInner(project, { background: false })}</div></div><header class="page__card case-heading"><div><p>${esc(project.company)}</p><h1>${esc(project.title)}</h1></div><span class="case-status">${esc(project.status)}</span></header><div class="case__study__slices">${project.layout.map(block => {
+  const blocks = project.layout.map(block => {
     if (block.intro || block.text !== undefined) return textBlock(project, block);
     const media = project.media[block.media];
-    return `<div class="case__study__gallery__item ${block.layout || ''}" data-media="${block.media}" data-ratio="${media.ratio}"><figure class="case__study__gallery__item__inner"><div class="page__card case__study__media has-gallery" tabindex="0" role="button" aria-label="Открыть медиа ${block.media + 1} в галерее" aria-describedby="media-caption-${block.media}" style="--aspect:${media.ratio}" data-open-gallery="${block.media}">${mediaContent(project, block.media, { priority: block.media === 0 })}</div><figcaption id="media-caption-${block.media}" class="case-caption">${esc(media.caption)}</figcaption></figure></div>`;
-  }).join('')}</div><div class="case__study__info"><div class="case__study__info__left"><section class="page__card"><h2>Результат</h2><div class="case__study__info__project__information__text"><p>${esc(project.result)}</p></div></section></div><div class="case__study__info__right"><section class="page__card case__study__info__credits"><h2>Роль</h2><p>${esc(project.role)}</p><h2>Мой вклад</h2><p>${esc(project.ownership)}</p><h2>Команда</h2><p>${esc(project.team)}</p><h2>Контекст</h2><p>${esc(project.context)}</p><h2>Статус</h2><p>${esc(project.status)}</p></section></div></div><a class="page__card case-next" href="${href('/' + next.id)}" data-route><div><span>Следующий кейс</span><p>${esc(next.title)}</p></div>${arrowIcon}</a></div></div>`;
+    return `<div class="case__study__gallery__item ${block.layout || ''}" data-media="${block.media}" data-ratio="${media.ratio}">
+      <figure class="case__study__gallery__item__inner">
+        <div class="page__card case__study__media has-gallery" tabindex="0" role="button"
+          aria-label="Открыть медиа ${block.media + 1} в галерее" aria-describedby="media-caption-${block.media}"
+          style="--aspect:${media.ratio}" data-open-gallery="${block.media}">
+          ${mediaContent(project, block.media, { priority: block.media === 0 })}
+        </div>
+        <figcaption id="media-caption-${block.media}" class="case-caption">${esc(media.caption)}</figcaption>
+      </figure>
+    </div>`;
+  }).join('');
+  const details = [
+    ['Мой вклад', project.ownership],
+    ['Роль', project.role],
+    ['Команда', project.team],
+    ['Контекст', project.context],
+    ['Статус', project.status],
+  ];
+  return `<div class="page__container">
+    <div class="case__study__list">
+      <div class="nav__card"><div class="nav__card__inner">${cardInner(project, { background: false })}</div></div>
+      <header class="page__card case-heading">
+        <div><p>${esc(project.company)}</p><h1>${esc(project.title)}</h1></div>
+        <span class="case-status">${esc(project.status)}</span>
+      </header>
+      <div class="case__study__slices">${blocks}</div>
+      <section class="page__card case-summary">
+        <h2>Результат</h2>
+        <p>${esc(project.result)}</p>
+        <dl>${details.map(([label, value]) => `<div><dt>${esc(label)}</dt><dd>${esc(value)}</dd></div>`).join('')}</dl>
+      </section>
+      <a class="page__card case-next" href="${href('/' + next.id)}" data-route>
+        <div><span>Следующий кейс</span><p>${esc(next.title)}</p></div>${arrowIcon}
+      </a>
+    </div>
+  </div>`;
 }
 
 function allPage() {
@@ -883,9 +928,9 @@ function sizeSlide() {
   const block = mediaBlocks()[state.gallery];
   const stage = $('.gallery-slide');
   if (!stage || !block) return;
-  const ratio = block.ratio || 1.5;
-  const maxHeight = innerHeight - 112;
-  const width = Math.min(innerWidth - 16, maxHeight * ratio);
+  const wrapper = stage.parentElement;
+  const ratio = block.ratio;
+  const width = Math.min(wrapper.clientWidth - 16, wrapper.clientHeight * ratio);
   stage.style.width = `${width}px`;
   stage.style.height = `${width / ratio}px`;
 }
